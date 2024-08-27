@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Html</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        *{
+            box-sizing:border-box;
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+            place-items:center;
+            min-height:100vh;
+            background-color: #00DBDE;
+            background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+
+        }
+        .container{
+           background: #1c1c1c;
+            height:300px;
+            width:300px;
+            text-align:center;
+            border-radius:5px 5px 5px 5px;
+            position:relative;
+        }
+        .h2 h1{
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+            border-radius:5px 5px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: bolder;
+            padding:10px;
+        }
+
+            .username{
+                padding:20px 10px 20px 12px;
+            }
+            .username input{
+                padding:7px;
+                border:none;
+                outline:none;
+                border-bottom:solid;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+            }
+            .username:hover input{
+                background-color:aqua;
+            }
+            .password{
+                padding:15px 10px 20px 12px; 
+            }
+            .password input{
+                padding:7px;
+                border:none;
+                outline:none;
+                border-bottom:solid;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+            }
+            .password:hover input{
+                background-color:aqua;
+            }
+            .for-sign a{
+                text-decoration:none;
+                position:relative;
+                padding:10px 30px 10px 20px;
+                color:white;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+            }
+            .login{
+                padding:15px 10px 20px 12px; 
+                height:70px;
+                
+            }
+            .login button{
+                width:100%;
+                height:100%;
+                border-radius: 10px;
+                background-color: #4158D0;
+                background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+                
+            }
+
+            @property --angle{
+            syntax:"<angle>";
+            initial-value:0deg;
+            inherits:false;
+        }
+        .container::after,.container::before {
+            content:"";
+            position:absolute;
+            height:100%;
+            width:100%;
+            background: linear-gradient(var(--angle),transparent,transparent,#45f3ff,#fc45ff);
+            z-index:-1;
+            top:50%;
+            left:50%;
+            translate:-50% -50%;
+            padding:8px;
+            border-radius:10px;
+           animation:2s spin ease-in-out infinite; 
+        }
+        @keyframes spin{
+            from{
+                --angle:0deg;
+            }
+            to{
+                --angle:360deg;
+            }
+        }
+        .content{
+            padding:100px;
+        }
+        
+       
+       
+    </style>
+</head>
+<body>
+     <div class="container">
+            <div class="h2">
+            <h1>Sign In</h1>
+        </div>
+        <div class="username" >
+            <input type="text" id="name" placeholder= "username">
+        </div>
+        <div class="password">
+            <input type="text" id="pass" placeholder="Password">
+        </div>
+        <div class="for-sign">
+            <a href="">Forget Password?</a>
+            <a href="">Sign Up</a>
+        </div>
+        <div class="login">
+            <button id="submit">Login</button>
+        </div>
+        <div class="content">
+            <h1 id="myh1"></h1>  
+            <h1 id="myh2"></h1> 
+            <h1 id="myh3"></h1>
+        </div>
+        <script>
+        const Submit=document.getElementById("submit");
+        const Detail=document.getElementById("name");
+        const Details=document.getElementById("pass");
+        let A;
+        let B;
+    Submit.onclick=function(){
+        A=Detail.value;
+        B=Details.value;
+    document.getElementById("myh3").textContent="The above contents are yourname  and password what you type";
+    document.getElementById("myh1").textContent=A;
+    document.getElementById("myh2").textContent=B;
+    
+    
+        }
+        </script> 
+   
+     </div>    
+</body>
+</html>
